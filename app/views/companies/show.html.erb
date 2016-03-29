@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title"><%= @company.company_name%></h4>
+  </div>
+  <div class="panel-body">
+    <p>
+      <strong>Company name:</strong>
+      <%= @company.company_name %>
+    </p>
+
+    <p>
+      <strong>Contacts:</strong>
+      <% @contacts.each do |contact| %>
+          <%= contact.contact %>
+    <% end %>
+    </p>
+
+    <%# link_to 'Edit', edit_company_path(@company) %>
+    <%= link_to 'Back', companies_path, :class => 'btn btn-default'%>
+    <a class="btn btn-primary">Add More Contact</a>
+
+  </div>
+</div>
